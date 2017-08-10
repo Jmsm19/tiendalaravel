@@ -2,9 +2,11 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.btn:hover {
+  cursor: pointer;
+}
+
 .navbar {
-  position: absolute;
-  top: 0;
   z-index: 9999;
   background: #FFF;
 }
@@ -18,13 +20,20 @@
   margin-bottom: 20px;
 }
 
+.card {
+  margin-bottom: 15px;
+}
+
 .outer {
   max-height: 238px;
   overflow-y: hidden;
 }
 
 .outer img {
+  position: relative;
+  max-height: 238px;
   width: 100%;
+  margin: 0 auto;
 }
 
 .addable a {
@@ -53,6 +62,11 @@
   bottom: 0;
 }
 
+.footer a:link,
+.footer a:visited {
+  color: inherit
+}
+
 /* STICKY FOOTER */
 body {
   display: flex;
@@ -62,6 +76,12 @@ body {
 
 main {
   margin-top: 60px;
-  margin-bottom: 20px;
   flex: 1;
+}
+
+/* ============================================================= */
+/* DETAILS SECTION */
+
+.details-section {
+  margin-top: 30px;
 }
