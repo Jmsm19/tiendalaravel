@@ -62,5 +62,6 @@ body {
 
 main {
   margin-top: 60px;
+  margin-bottom: 20px;
   flex: 1;
 }

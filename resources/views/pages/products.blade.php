@@ -4,7 +4,7 @@
   <div class="row">
     @foreach($products as $item)
     <div class="col">
-      <div class="card" style="width: 15rem;">
+      <div class="card" style="width: 20rem;">
         <div class="outer">
           <img class="card-img-top" src="{{ $item->image }}" alt="{{ $item->name }}'s picture'">
           <div class="addable">
@@ -12,10 +12,10 @@
           </div>
           </img>
         </div>
-        <div class="card-block">
+        <a class="card-block">
           <h4 class="card-title">{{ $item->name }}</h4>
           <p class="card-text">{{ $item->description }}</p>
-        </div>
+        </a>
       </div>
     </div>
     @endforeach    
