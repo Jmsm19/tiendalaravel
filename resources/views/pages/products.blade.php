@@ -4,17 +4,21 @@
   <div class="row">
     @foreach($products as $item)
     <div class="col">
-      <div class="card" style="width: 20rem;">
+      <div class="card" style="width: 15rem;">
         <div class="outer">
-          <img class="card-img-top" src="{{ $item->image }}" alt="{{ $item->name }}'s picture'">
-          <div class="addable">
-            <a href="#" class="text-center addable">Add to cart</a>
-          </div>
+          <a href="{{ route('details', ['id' => $item->id]) }}">
+          <img class="card-img-top text-center" src="{{ $item->image }}" alt="{{ $item->name }}'s picture'">
+          </a>
           </img>
+          <div class="addable"> 
+            <a href="#" class="text-center addable">
+              Add to cart
+            </a>
+          </div>
         </div>
         <a class="card-block">
-          <h4 class="card-title">{{ $item->name }}</h4>
-          <p class="card-text">{{ $item->description }}</p>
+          <h5 class="card-title">{{ $item->name }}</h5>
+          <h6 class="card-text text-right">$ {{ $item->price }}</h6>
         </a>
       </div>
     </div>

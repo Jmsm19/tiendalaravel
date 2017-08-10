@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'StoreController@index')->name('store');
+Route::get('/details/{id}', 'StoreController@show')->name('details');
 
 Auth::routes();
 
