@@ -1,0 +1,56 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  margin-top: 60px;
+}
+
+nav {
+  z-index: 9999;
+  background: #FFF;
+}
+
+.jumbotron {
+  background-color: #ECEEEF;
+  width: 100%;
+}
+
+.product-list-title {
+  margin-bottom: 20px;
+}
+
+.outer {
+  max-height: 238px;
+  overflow-y: hidden;
+}
+
+.outer img {
+  width: 100%;
+}
+
+.addable a {
+  width: 100%;
+  background-color: #232323;  
+  padding: 10px;
+  position: relative;
+  bottom: 0px;
+}
+
+.addable a:link,
+.addable a:visited {
+  display: block;
+  width: 100%;
+  color: #FFF;
+  text-decoration: none;
+}
+
+.footer {
+  margin-top: 30px;
+  background-color: #ECEEEF;
+  padding: 10px;
+}
+
+.footer p {
+  margin: 0;
+}
