@@ -15,10 +15,11 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 100);
+            $table->string('name');
             $table->text('description');
             $table->float('price')->unsigned();
-            $table->integer('image_id')->nullable();
+            $table->string('image')->default('http://lorempixel.com/200/200/technics');
+            $table->integer('category_id');
             $table->timestamps();
         });
     }

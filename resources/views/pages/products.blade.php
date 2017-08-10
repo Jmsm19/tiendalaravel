@@ -6,7 +6,7 @@
     <div class="col">
       <div class="card" style="width: 15rem;">
         <div class="outer">
-          <img class="card-img-top" src="http://lorempixel.com/200/200/technics" alt="Card image cap">
+          <img class="card-img-top" src="{{ $item->image }}" alt="{{ $item->name }}'s picture'">
           <div class="addable">
             <a href="#" class="text-center addable">Add to cart</a>
           </div>
