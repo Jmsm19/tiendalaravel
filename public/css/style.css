@@ -6,6 +6,10 @@
   cursor: pointer;
 }
 
+a.btn.btn-primary {
+  color: #FFF;
+}
+
 .navbar {
   background: #FFF;
 }

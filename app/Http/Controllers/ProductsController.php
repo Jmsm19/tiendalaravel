@@ -41,11 +41,29 @@ class ProductsController extends Controller
         // return $formInput;
         
         // Image upload 
-        $image = $request->image;
-        if ($image) {
-            $imageName = $image->getClientOriginalName();
-            $image->move('img', $imageName);
+        // $image = $request->image;
+        // if ($image) {
+        //     $imageName = $image->getClientOriginalName();
+        //     $image->move('img', $imageName);
+        //     $formInput['image'] = $imageName;
+        // }
+
+        // Handle File Upload
+        if ($request->hasFile('image')) {
+            // Get filename with the extension
+            $filenameWithExt = $request->image->getClientOriginalName();
+            // Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get just extension
+            $extension = $request->image->getClientOriginalExtension();
+            // Filename to Store
+            $imageName = $filename.'_'.time().'.'.$extension;
+            // Move Image To Img Folder
+            $request->image->move('img', $imageName);
+
             $formInput['image'] = $imageName;
+        } else {
+            $formInput['image'] = 'noimage.png';
         }
 
         Product::create($formInput);
