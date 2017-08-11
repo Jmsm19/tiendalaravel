@@ -94,8 +94,7 @@ main {
 
 div.dash-menu {
   padding: 20px 10px;
-  margin-right: 20px;
-  margin-left: 60px;
+  margin-right: 60px;
   background-color: #ECEEEF;
   border-radius: 5px;
   box-shadow: 0 0 5px #232323;
@@ -105,8 +104,7 @@ div.dash-menu {
   padding: 20px;
   overflow-y: auto;
   background-color: #ECEEEF;
-  height: 650px;
-  margin-right: 60px;
+  height: 750px;
   border-radius: 5px;
   box-shadow: 0 0 5px #232323 inset;
 }

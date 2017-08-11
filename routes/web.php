@@ -21,5 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
   Route::get('/', 'HomeController@admin')->name('admin');
-  Route::get('/products/create', 'ProductsController@create')->name('createProd');
+  // Route::get('/products/create', 'ProductsController@create')->name('createProd');
+  Route::resource('product', 'ProductsController');
+  // Route::resource('category', 'CategoriesController@store');
+  
 });
