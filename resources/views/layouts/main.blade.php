@@ -16,15 +16,7 @@
     @include('layouts.navbar')
     
     <main class="container">
-
       @yield('content')
-      {{--  <div class="row hero">
-        @include('pages.hero')
-      </div>
-
-      <div class="row products">
-        @include('pages.products')
-      </div>  --}}
     </main> <!-- /container -->
     
     <footer class="footer">

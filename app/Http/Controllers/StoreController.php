@@ -14,7 +14,11 @@ class StoreController extends Controller
 
     function show($id) {
         $product = Product::find($id);
-        // return product;
         return view('pages.details', compact('product'));
+    }
+
+    function add($id) {
+        $product = Product::find($id);
+        
     }
 }

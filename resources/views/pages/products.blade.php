@@ -11,7 +11,7 @@
           </a>
           </img>
           <div class="addable"> 
-            <a href="#" class="text-center addable">
+            <a href="add/{id}" class="text-center addable">
               Add to cart
             </a>
           </div>
