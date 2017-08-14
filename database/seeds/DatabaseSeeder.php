@@ -15,7 +15,6 @@ class DatabaseSeeder extends Seeder
         DB::table('products')->delete();
         DB::table('categories')->delete();
 
-
         DB::table('categories')->insert([
             ['name' => 'RPG'],
             ['name' => 'Adventure'],
@@ -27,19 +26,19 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Ni no Kuni', 
             'description' => 'Ni no Kuni es un videojuego de rol desarrollado por la empresa japonesa Level-5 conjuntamente con el estudio de animación Ghibli, para Nintendo DS y PlayStation 3.', 
             'price' => 24.00, 
-            'image' => 'https://howlongtobeat.com/gameimages/2412937-box_nnk_large.png', 
+            'image' => 'Ni_no_kuni.png', 
             'category_id' => 1],
             
             ['name' => 'Rise of Tomb Raider', 
             'description' => 'Rise of The Tomb Raider es un videojuego de acción-aventura desarrollado por Crystal Dynamics. Es el undécimo videojuego de la serie Tomb Raider.', 
             'price' => 40.00, 
-            'image' => 'https://howlongtobeat.com/gameimages/250px-Rise_of_the_Tomb_Raider.jpg', 
+            'image' => 'Rise_of_the_Tomb_Raider.jpg', 
             'category_id' => 2],
             
             ['name' => 'The Witcher 3', 
             'description' => 'The Witcher 3: Wild Hunt es un videojuego de rol desarrollado por CD Projekt RED. CD Projekt RED es el desarrollador mientras que la distribución corre a cargo de la Warner Bros. Interactive, en el caso de Norteamérica y Bandai Namco para Europa.', 
             'price' => 40.00, 
-            'image' => 'https://howlongtobeat.com/gameimages/256px-TW3_Wild_Hunt_logo.png', 
+            'image' => 'TW3_Wild_Hunt.png', 
             'category_id' => 1],
         ]);
     }
