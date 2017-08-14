@@ -15,7 +15,8 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+        return view('admin.product.index', compact('products'));
     }
 
     /**
@@ -38,15 +39,15 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         $formInput = $request->except('image');
-        // return $formInput;
         
-        // Image upload 
-        // $image = $request->image;
-        // if ($image) {
-        //     $imageName = $image->getClientOriginalName();
-        //     $image->move('img', $imageName);
-        //     $formInput['image'] = $imageName;
-        // }
+        // Validate request
+        $this->validate($request, [
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'price' => 'required',
+            'image' => 'image | mimes:jpg,jpeg,png | dimensions:min_width=238,min_height=200 | max:300', // Max is in Kb
+            'category_id' => 'required|integer',
+        ]);
 
         // Handle File Upload
         if ($request->hasFile('image')) {

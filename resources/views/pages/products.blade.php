@@ -2,7 +2,8 @@
 <br>
 <div class="container">
   <div class="row">
-    @foreach($products as $item)
+
+  @forelse ($products as $item)
     <div class="col">
       <div class="card" style="width: 15rem;">
         <div class="outer">
@@ -22,6 +23,8 @@
         </a>
       </div>
     </div>
-    @endforeach    
+  @empty
+    
+  @endforelse
   </div>
 </div>

@@ -111,6 +111,11 @@ div.dash-menu {
   height: 750px;
   border-radius: 5px;
   box-shadow: 0 0 5px #232323 inset;
+  -ms-overflow-style: none;
+}
+
+.dash-section::-webkit-scrollbar { 
+  width: 0 !important 
 }
 
 .input-group-addon {
@@ -119,4 +124,18 @@ div.dash-menu {
 
 .input[name='price'] {
   width: 100px;
+}
+
+textarea {
+  height: 100px !important;
+  resize: none;
+}
+
+h6 {
+  font-weight: bold;
+}
+
+h5 a:hover,
+h5 a:link {
+  text-decoration: none;
 }
