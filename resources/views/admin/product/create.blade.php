@@ -6,20 +6,31 @@
         <h4>New product</h4>
 
         {!! Form::open(array('route' => 'product.store', 'enctype' => 'multipart/form-data', 'class'=> 'form', 'method' => 'post', 'files' => true)) !!}
-     
+    
           <div class="form-group">
           {!! Form::label('name', 'Name') !!}
           {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Product name']) !!}
           @if ($errors->has('name'))
               <span class="form-text text-muted">
-                  <strong>{{ $errors->first('name') }}</strong>
+                    <strong>{{ $errors->first('name') }}</strong>
               </span>
           @endif
           </div>
 
           <div class="form-group">
-          {!! Form::label('category_id', 'Category') !!}
-          {!! Form::select('category_id', $categories, null, ['class' => 'form-control']) !!}
+          <div class="row">
+          <div class="col col-md-8">
+            {!! Form::label('category_id', 'Category') !!}
+            {!! Form::select('category_id', $categories, null, ['class' => 'form-control']) !!}
+          </div>
+          <div class="col">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-block newCatBtn" data-toggle="modal" data-target="#newCategory">
+              <i class="fa fa-plus" aria-hidden="true"></i> New category
+            </button>
+          </div>
+          </div>
+          </button>
           @if ($errors->has('category_id'))
               <span class="form-text text-muted">
                   <strong>{{ $errors->first('category_id') }}</strong>

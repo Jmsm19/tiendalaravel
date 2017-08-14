@@ -139,3 +139,20 @@ h5 a:hover,
 h5 a:link {
   text-decoration: none;
 }
+
+.dropdown > .btn-secondary:hover,
+.dropdown > .btn-secondary {
+  color: #FFF !important;
+}
+
+.newCatBtn {
+  margin-top: 31px;
+}
+
+a.btn.btn-default {
+  border-radius: 5px;
+}
+
+.modal-title {
+  margin-left: 20px;
+}

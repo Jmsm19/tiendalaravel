@@ -20,8 +20,7 @@ Route::get('/admin', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
   Route::get('/', 'HomeController@admin')->name('admin');
+  Route::get('/admin/product/{$id}', 'ProductsController@showSorted');
   Route::resource('product', 'ProductsController');
-  // Route::resource('category', 'CategoriesController@store');
-
-  
+  Route::resource('category', 'CategoriesController');  
 });

@@ -14,9 +14,17 @@ class ProductsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+    {     
+        $products = Product::paginate(10);
+        $categories = Category::orderBy('name', 'asc')->get();
+        return view('admin.product.index', compact('products', 'categories'));
+    }
+
+    public function showSorted($id) 
     {
-        $products = Product::all();
-        return view('admin.product.index', compact('products'));
+        $products = Category::find($id)->products;
+        $categories = Category::orderBy('name', 'asc')->get();
+        return view('admin.product.index', compact('products', 'categories'));
     }
 
     /**

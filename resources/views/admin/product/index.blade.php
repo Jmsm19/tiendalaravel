@@ -1,7 +1,26 @@
 @extends('admin.layouts.dashboard')
 
 @section('products')
-    <h4>Products</h4>
+    <div class="row">
+      <div class="col col-md-9">
+        <h4>Products</h4>
+      </div>
+      @if(!empty($categories))
+        <div class="col col-md-2">
+          <div class="dropdown">
+            <a class="btn btn-secondary btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sort by
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{{ url('admin/product/') }}">All</a>
+            @foreach($categories as $category)
+              <a class="dropdown-item" href="{{ $category->id }}">{{ $category->name }}</a>
+            @endforeach
+            </div>
+          </div>
+        </div>
+      @endif
+    </div>
     <br>
     <div id="accordion" role="tablist" aria-multiselectable="true">
       @forelse ($products as $product)
@@ -32,4 +51,5 @@
         </div>
       @empty
     @endforelse
+    {{ $products->links() }}
 @endsection
