@@ -12,7 +12,7 @@
           </a>
           </img>
           <div class="addable"> 
-            <a href="add/{id}" class="text-center addable">
+            <a href="{{ route('cart.edit', $item->id) }}" class="text-center addable">
               Add to cart
             </a>
           </div>

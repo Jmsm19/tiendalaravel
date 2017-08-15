@@ -13,6 +13,15 @@ a.btn.btn-primary {
 .navbar {
   background: #FFF;
 }
+.nav-link {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  margin-left: 10px;
+}
+
+.nav-link:hover {
+  opacity: .8;
+}
 
 .jumbotron {
   background-color: #ECEEEF;
@@ -160,4 +169,28 @@ a.btn.btn-default {
 
 .first-col {
   width: 500px;
+}
+
+/* ============================================================= */
+/* CART SECTION */
+
+.cart-table,
+.checkout-col {
+  margin-top: 50px;
+}
+
+.cart-table a:hover {
+  text-decoration: none;
+}
+
+.cart-image-col {
+  width: 50px;
+}
+
+.cart-select {
+  width: 80px;
+}
+
+.checkout-col button {
+  margin-bottom: 20px;
 }

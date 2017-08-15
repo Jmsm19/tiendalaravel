@@ -13,8 +13,8 @@
           <a class="nav-link" href="{{ route('store') }}">About</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="{{ route('store') }}">
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-default">0</span>
+          <a class="nav-link" href="{{ url('/cart') }}">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-success">{{ Cart::count() }}</span>
           </a>
         </li>
       </ul>

@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.index')
 
 @section('content')
   <div class="row details-section">
@@ -36,7 +36,7 @@
           </a>
         </div>
         <div class="col col-md-3 push-md-6">
-          <a class="btn btn-primary btn-block">
+          <a class="btn btn-primary btn-block" href="{{ route('cart.edit', $product->id) }}">
             <i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart
           </a>
         </div>
