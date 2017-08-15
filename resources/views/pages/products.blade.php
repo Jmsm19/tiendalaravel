@@ -4,7 +4,7 @@
   <div class="row">
 
   @forelse ($products as $item)
-    <div class="col">
+    <div class="col col-sm-6 col-md-3">
       <div class="card" style="width: 15rem;">
         <div class="outer">
           <a href="{{ route('details', ['id' => $item->id]) }}">
@@ -24,7 +24,7 @@
       </div>
     </div>
   @empty
-    
+    <p>No products available at the moment.</p>
   @endforelse
-  </div>
 </div>
+{{ $products->links() }}

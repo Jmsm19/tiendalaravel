@@ -21,6 +21,9 @@
         </div>
       @endif
     </div>
+    @if(!$sorted)
+      {{ $products->links() }}
+    @endif
     <br>
     <div id="accordion" role="tablist" aria-multiselectable="true">
       @forelse ($products as $product)
@@ -72,6 +75,5 @@
         </div>
       @empty
       <h5>No products available yet.</h5>
-    @endforelse
-    
+    @endforelse    
 @endsection

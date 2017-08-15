@@ -8,7 +8,7 @@ use App\Product;
 class StoreController extends Controller
 {
     function index() {
-        $products = Product::all();
+        $products = Product::paginate(8);
         return view('pages.store', compact('products'));
     }
 

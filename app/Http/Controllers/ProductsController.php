@@ -15,9 +15,10 @@ class ProductsController extends Controller
      */
     public function index()
     {     
-        $products = Product::paginate(10);
+        $products = Product::orderBy('name', 'asc')->paginate(8);
         $categories = Category::orderBy('name', 'asc')->get();
-        return view('admin.product.index', compact('products', 'categories'));
+        $sorted = false;
+        return view('admin.product.index', compact('products', 'categories', 'sorted'));
     }
 
     /**
@@ -82,7 +83,8 @@ class ProductsController extends Controller
     {
         $products = Category::find($id)->products;
         $categories = Category::orderBy('name', 'asc')->get();
-        return view('admin.product.index', compact('products', 'categories'));
+        $sorted = true;
+        return view('admin.product.index', compact('products', 'categories', 'sorted'));
     }
 
     /**
