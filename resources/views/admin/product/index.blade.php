@@ -36,12 +36,18 @@
           <div id="collapser{{ $product->id }}" class="collapse" role="tabpanel" aria-labelledby="headingOne">
             <div class="card-block">
               <div class="media">
-                <img class="d-flex mr-3" src="/img/{{ $product->image }}" alt="{{ $product->name }} logo">
+                <img class="d-flex mr-3 rounded" src="/img/{{ $product->image }}" alt="{{ $product->name }} logo">
                 <div class="media-body">
                   <h6>Price</h6>
                   <p>$ {{ $product->price }}</p>
+
                   <h6>Category</h6>
-                  <p>{{ $product->category->name }}</p>
+                  @if(empty($product->category->name))
+                      <p>No category</p>
+                  @else
+                    <p>{{ $product->category->name }}</p>
+                  @endif
+                  
                   <h6>Description</h6>
                   <p>{{ $product->description }}</p>
 
@@ -65,6 +71,7 @@
           </div>
         </div>
       @empty
+      <h5>No products available yet.</h5>
     @endforelse
     
 @endsection

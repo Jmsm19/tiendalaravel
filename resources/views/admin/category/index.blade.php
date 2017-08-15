@@ -38,6 +38,12 @@
             </td>
           </tr>
         @empty
+            <tr>
+            <td scope="row first-col">
+              No data
+            </td>
+            <td>
+          </tr>
         @endforelse
         </tbody>
         

@@ -12,6 +12,11 @@
         <li class="nav-item active">
           <a class="nav-link" href="{{ route('store') }}">About</a>
         </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ route('store') }}">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-default">0</span>
+          </a>
+        </li>
       </ul>
     </div>
   </div>
