@@ -66,7 +66,7 @@ class ProductsController extends Controller
 
             $formInput['image'] = $imageName;
         } else {
-            $formInput['image'] = 'noimage.png';
+            $formInput['image'] = 'noimage.jpg';
         }
 
         Product::create($formInput);
