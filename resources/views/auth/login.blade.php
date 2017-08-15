@@ -13,7 +13,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col col-md-4 form-control-label">E-Mail Address</label>
+                            <label for="email" class="col col-md-12 form-control-label">E-Mail Address</label>
 
                             <div class="col col-md-12">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
@@ -27,7 +27,7 @@
                         </div>
 
                         <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col col-md-4 form-control-label">Password</label>
+                            <label for="password" class="col col-md-12 form-control-label">Password</label>
 
                             <div class="col col-md-12">
                                 <input id="password" type="password" class="form-control" name="password" required>
@@ -41,7 +41,7 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col col-md-4 offset-md-8">
+                            <div class="col col-xs-12">
                                 <div class="checkbox">
                                     <label>
                                         <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
@@ -56,7 +56,7 @@
                                     Login
                                 </button>
                             </div>
-                            <div class="col-md-5 offset-md-7">     
+                            <div class="col-xs-12">     
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
                                 </a>

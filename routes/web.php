@@ -16,13 +16,11 @@ Route::get('/details/{id}', 'StoreController@show')->name('details');
 
 Auth::routes();
 
-Route::get('/admin', 'HomeController@index')->name('home');
-
 Route::resource('/cart', 'CartController');
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
-  Route::get('/', 'HomeController@admin')->name('admin');
-  Route::get('/admin/product/{$id}', 'ProductsController@showSorted');
-  Route::resource('product', 'ProductsController');
-  Route::resource('category', 'CategoriesController');  
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
+  // Route::get('/', 'HomeController@admin')->name('admin');
+  // Route::resource('product', 'ProductsController');
+  // Route::resource('category', 'CategoriesController');  
+  return "Page requires user login as admin";
 });
