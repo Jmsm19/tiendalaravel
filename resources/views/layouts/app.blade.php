@@ -34,12 +34,12 @@
                     <ul class="navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li class="nav-item">
+                            {{--  <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">Login</a>
-                            </li>
-                            <li class="nav-item">
+                            </li>  --}}
+                            {{--  <li class="nav-item">
                                 <a class="nav-link" href="{{ route('register') }}">Register</a>
-                            </li>
+                            </li>  --}}
                         @else
                             <li class="nav-item dropdown">
                                 <a href="#" class="dnav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

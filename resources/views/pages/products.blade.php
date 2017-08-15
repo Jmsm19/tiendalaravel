@@ -8,7 +8,7 @@
       <div class="card" style="width: 15rem;">
         <div class="outer">
           <a href="{{ route('details', ['id' => $item->id]) }}">
-          <img class="card-img-top text-center" src="/img/{{ $item->image }}" alt="{{ $item->name }}'s picture'">
+          <img class="card-img-top text-center" src="/img/{{ $item->image }}" alt="{{ $item->name }}'s picture">
           </a>
           </img>
           <div class="addable"> 

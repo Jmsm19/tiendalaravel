@@ -93,7 +93,7 @@ main {
 /* DASHBOARD SECTION */
 
 .dashboard {
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
 div.dash-menu {
@@ -105,10 +105,10 @@ div.dash-menu {
 }
 
 .dash-section {
-  padding: 20px;
+  padding: 20px !important;
   overflow-y: auto;
   background-color: #ECEEEF;
-  height: 750px;
+  height: 700px;
   border-radius: 5px;
   box-shadow: 0 0 5px #232323 inset;
   -ms-overflow-style: none;
@@ -146,7 +146,8 @@ h5 a:link {
 }
 
 .newCatBtn {
-  margin-top: 31px;
+  margin-top: 30px;
+  color: #FFF !important;
 }
 
 a.btn.btn-default {
@@ -155,4 +156,8 @@ a.btn.btn-default {
 
 .modal-title {
   margin-left: 20px;
+}
+
+.first-col {
+  width: 500px;
 }

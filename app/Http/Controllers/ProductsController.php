@@ -20,13 +20,6 @@ class ProductsController extends Controller
         return view('admin.product.index', compact('products', 'categories'));
     }
 
-    public function showSorted($id) 
-    {
-        $products = Category::find($id)->products;
-        $categories = Category::orderBy('name', 'asc')->get();
-        return view('admin.product.index', compact('products', 'categories'));
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -87,7 +80,9 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        //
+        $products = Category::find($id)->products;
+        $categories = Category::orderBy('name', 'asc')->get();
+        return view('admin.product.index', compact('products', 'categories'));
     }
 
     /**
@@ -98,7 +93,9 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        $categories = Category::pluck('name', 'id');
+        return view('admin.product.edit', compact('product', 'categories'));
     }
 
     /**
@@ -110,7 +107,37 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $formInput = $request->except(['image', '_method', '_token']);
+
+        // Validate request
+        $this->validate($request, [
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'price' => 'required',
+            'image' => 'image | mimes:jpg,jpeg,png | dimensions:min_width=238,min_height=200 | max:300', // Max is in Kb
+            'category_id' => 'required|integer',
+        ]);
+
+        // Handle File Upload
+        if ($request->hasFile('image')) {
+            // Get filename with the extension
+            $filenameWithExt = $request->image->getClientOriginalName();
+            // Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get just extension
+            $extension = $request->image->getClientOriginalExtension();
+            // Filename to Store
+            $imageName = $filename.'_'.time().'.'.$extension;
+            // Move Image To Img Folder
+            $request->image->move('img', $imageName);
+
+            $formInput['image'] = $imageName;
+        } else {
+            $formInput['image'] = Product::find($id)->image;
+        }
+
+        Product::where('id', $id)->update($formInput);
+        return redirect()->to('/admin/product');
     }
 
     /**
@@ -121,6 +148,7 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Product::find($id)->delete();
+        return back();
     }
 }

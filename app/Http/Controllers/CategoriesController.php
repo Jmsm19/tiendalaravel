@@ -15,7 +15,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::orderBy('name', 'asc')->paginate(10);
+        return view('admin.category.index', compact('categories'));
     }
 
     /**
@@ -65,7 +66,8 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        return view('admin.category.edit', compact('category'));
     }
 
     /**
@@ -77,7 +79,13 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'categName' => 'required|string'
+        ]);
+        $category = Category::find($id);
+        $category->name = $request->categName;
+        $category->save();
+        return redirect()->to('/admin/category');
     }
 
     /**
@@ -88,6 +96,7 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Category::find($id)->delete();
+        return back();
     }
 }

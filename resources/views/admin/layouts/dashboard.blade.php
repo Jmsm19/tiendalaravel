@@ -9,49 +9,58 @@
         <a class="btn btn-secondary btn-block" href="{{ route('store') }}">
           <i class="fa fa-home" aria-hidden="true"></i> Main site
         </a>
-        <a class="btn btn-secondary btn-block" href="{{ url('/admin/product/') }}">
-          <i class="fa fa-list" aria-hidden="true"></i> Product list
-        </a>
-        <a class="btn btn-secondary btn-block" href="{{ url('/admin/product/create') }}">
-          <i class="fa fa-plus" aria-hidden="true"></i> Add product
-        </a>
+      </div>
+      <br>
+      <div id="accordianId" role="tablist" aria-multiselectable="true">
+        <div class="card">
+          <div class="card-header" role="tab" id="section1HeaderId">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" data-parent="#accordianId" href="#section1ContentId" aria-expanded="true" aria-controls="section1ContentId">
+                Products
+              </a>
+            </h5>
+          </div>
+          <div id="section1ContentId" class="collapse in show" role="tabpanel" aria-labelledby="section1HeaderId">
+            <div class="card-block">
+              <a class="btn btn-secondary btn-block" href="{{ url('/admin/product/') }}">
+                <i class="fa fa-list" aria-hidden="true"></i> Product list
+              </a>
+              <a class="btn btn-secondary btn-block" href="{{ url('/admin/product/create') }}">
+                <i class="fa fa-plus" aria-hidden="true"></i> Add product
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" role="tab" id="section2HeaderId">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" data-parent="#accordianId" href="#section2ContentId" aria-expanded="true" aria-controls="section2ContentId">
+                Categories
+              </a>
+            </h5>
+          </div>
+          <div id="section2ContentId" class="collapse in" role="tabpanel" aria-labelledby="section2HeaderId">
+            <div class="card-block">
+              <a class="btn btn-secondary btn-block" href="{{ url('/admin/category/') }}">
+                <i class="fa fa-list" aria-hidden="true"></i> Category list
+              </a>
+              <a class="btn btn-secondary btn-block newCatBtn" data-toggle="modal" data-target="#newCategory">
+                <i class="fa fa-plus" aria-hidden="true"></i> Add category
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="col dash-section">
       <div class="container">
         @yield('form')
         @yield('products')
+        @yield('categories')
       </div>
     </div>
   </div>
   
-  <!-- Modal -->
-  <div class="modal fade" id="newCategory" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="mr-auto modal-title">New category</h4>
-        </div>
-        <div class="modal-body">
-          <div class="container-fluid">       
-            {!! Form::open(array('route' => 'category.store', 'class'=> 'form', 'method' => 'post')) !!}      
-            <div class="form-group">
-              {!! Form::label('categName', 'Name') !!}
-              {!! Form::text('categName', null, ['class' => 'form-control']) !!}     
-              @if ($errors->has('categName'))
-                <span class="form-text text-muted">
-                    <strong>{{ $errors->first('categName') }}</strong>
-                </span>
-              @endif        
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          {!! Form::submit('Create', ['class' => 'btn btn-primary']) !!}          
-          {!! Form::close() !!}
-        </div>
-      </div>
-    </div>
-  </div>
+  @include('admin.category.create')
+  
 @endsection

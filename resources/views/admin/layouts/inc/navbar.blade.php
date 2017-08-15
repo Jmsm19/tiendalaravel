@@ -5,7 +5,7 @@
               aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="{{ url('/admin') }}">
+      <a class="navbar-brand" href="{{ url('/admin/product') }}">
           <img src="{{ asset('/img/logo.png') }}" height="35px" alt="Manten Dev logo">
       </a>
       <div class="collapse navbar-collapse" id="navbarCollapse">

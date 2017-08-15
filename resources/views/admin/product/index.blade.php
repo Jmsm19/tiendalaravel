@@ -14,7 +14,7 @@
             <div class="dropdown-menu">
               <a class="dropdown-item" href="{{ url('admin/product/') }}">All</a>
             @foreach($categories as $category)
-              <a class="dropdown-item" href="{{ $category->id }}">{{ $category->name }}</a>
+              <a class="dropdown-item" href="{{ route('product.show', [$category->id]) }}">{{ $category->name }}</a>
             @endforeach
             </div>
           </div>
@@ -44,6 +44,21 @@
                   <p>{{ $product->category->name }}</p>
                   <h6>Description</h6>
                   <p>{{ $product->description }}</p>
+
+                  <br>
+                  
+                  <div class="row">
+                    <div class="col col-md-3 offset-md-2">
+                      {!! Form::open(array('route' => ['product.edit', $product->id ], 'class'=> 'form', 'method' => 'get')) !!}
+                      {!! Form::button('<i class="fa fa-pencil"></i> Edit', ['type' => 'submit', 'class' => 'btn btn-info btn-block'] ) !!}
+                      {!! Form::close() !!}
+                    </div>
+                    <div class="col col-md-3 offset-md-1">
+                      {!! Form::open(array('route' => ['product.destroy', $product->id ], 'class'=> 'form', 'method' => 'delete')) !!}
+                      {!! Form::button('<i class="fa fa-trash"></i> Delete', ['type' => 'submit', 'class' => 'btn btn-danger btn-block'] ) !!}
+                      {!! Form::close() !!}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -51,5 +66,5 @@
         </div>
       @empty
     @endforelse
-    {{ $products->links() }}
+    
 @endsection
