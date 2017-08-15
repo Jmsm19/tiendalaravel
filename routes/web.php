@@ -18,6 +18,8 @@ Auth::routes();
 
 Route::get('/admin', 'HomeController@index')->name('home');
 
+Route::resource('/cart', 'CartController');
+
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
   Route::get('/', 'HomeController@admin')->name('admin');
   Route::get('/admin/product/{$id}', 'ProductsController@showSorted');
