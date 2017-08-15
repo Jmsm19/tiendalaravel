@@ -19,7 +19,9 @@ class Admin
         if (Auth::check() && Auth::user()->isAdmin()) {
             return $next($request);
         }
-
-        return redirect('home');
+        
+        if (Auth::check() && !Auth::user()->isAdmin()) {
+            return redirect('/');
+        }
     }
 }
