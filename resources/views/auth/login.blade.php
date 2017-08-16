@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.index')
 
 @section('content')
-<main class="container">
+<main class="container form">
     <div class="row">
         <div class="col col-md-6 offset-md-3">
             <div class="card">
@@ -52,12 +52,12 @@
 
                         <div class="form-group">
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary btn-block">
+                                <button type="submit" class="btn btn-primary btn-block login-btn">
                                     Login
                                 </button>
                             </div>
                             <div class="col-xs-12">     
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <a class="forget-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
                                 </a>
                             </div>

@@ -45,19 +45,21 @@
     </div>
 
     <div class="col col-md-2 checkout-col text-right">
-      
       @if(Cart::count() >= 1)
-        <button type="button" class="btn btn-primary btn-lg btn-block text-center">Checkout</button>
-        <h6 class="subtotal">Total ({{ Cart::count() }}
+        <a type="button" class="btn btn-default btn-lg btn-block text-center checkout-btn" href="{{ url('/purchase') }}">Checkout</a>
+        <h6 class="subtotal">Subtotal ({{ Cart::count() }}
         @if(Cart::count() == 1)
           item)</h6>
         @else
           items)</h6>
         @endif
         <p>$ <spam class="total">{{ Cart::subtotal() }}</spam></p>
+        
         <h6>Tax (12%)</h6>
         <p>$ {{ Cart::tax() }}</p>
+        
         <hr>
+        
         <h6>Total</h6>
         <p>$ {{ Cart::total() }}</p>
       @endif
