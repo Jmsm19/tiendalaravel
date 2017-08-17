@@ -23,6 +23,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
   Route::get('/', 'HomeController@admin')->name('admin');
   Route::resource('product', 'ProductsController');
   Route::resource('category', 'CategoriesController');  
+  Route::get('/order/{status?}', 'OrderController@show');
+  Route::put('/order/edit/{id}', 'OrderController@changeStatus')->name('order.edit');
 });
 
 Route::group(['middleware' => 'auth'], function () {

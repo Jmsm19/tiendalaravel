@@ -15,12 +15,12 @@
         <div class="card">
           <div class="card-header" role="tab" id="section1HeaderId">
             <h5 class="mb-0">
-              <a data-toggle="collapse" data-parent="#accordianId" href="#section1ContentId" aria-expanded="true" aria-controls="section1ContentId">
+              <a data-toggle="collapse" data-parent="#accordianId" href="#productSection" aria-expanded="true" aria-controls="section1ContentId">
                 Products
               </a>
             </h5>
           </div>
-          <div id="section1ContentId" class="collapse in show" role="tabpanel" aria-labelledby="section1HeaderId">
+          <div id="productSection" class="collapse in show" role="tabpanel" aria-labelledby="productSection">
             <div class="card-block">
               <a class="btn btn-secondary btn-block" href="{{ url('/admin/product/') }}">
                 <i class="fa fa-list" aria-hidden="true"></i> Product list
@@ -34,18 +34,40 @@
         <div class="card">
           <div class="card-header" role="tab" id="section2HeaderId">
             <h5 class="mb-0">
-              <a data-toggle="collapse" data-parent="#accordianId" href="#section2ContentId" aria-expanded="true" aria-controls="section2ContentId">
+              <a data-toggle="collapse" data-parent="#accordianId" href="#categoriesSection" aria-expanded="true" aria-controls="categoriesSection">
                 Categories
               </a>
             </h5>
           </div>
-          <div id="section2ContentId" class="collapse in" role="tabpanel" aria-labelledby="section2HeaderId">
+          <div id="categoriesSection" class="collapse in" role="tabpanel" aria-labelledby="Categories">
             <div class="card-block">
               <a class="btn btn-secondary btn-block" href="{{ url('/admin/category/') }}">
                 <i class="fa fa-list" aria-hidden="true"></i> Category list
               </a>
               <a class="btn btn-secondary btn-block newCatBtn" data-toggle="modal" data-target="#newCategory">
                 <i class="fa fa-plus" aria-hidden="true"></i> Add category
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" role="tab" id="section2HeaderId">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" data-parent="#accordianId" href="#ordersSection" aria-expanded="true" aria-controls="section2ContentId">
+                Orders
+              </a>
+            </h5>
+          </div>
+          <div id="ordersSection" class="collapse in" role="tabpanel" aria-labelledby="ordersSection">
+            <div class="card-block">
+              <a class="btn btn-secondary btn-block" href="{{ url('/admin/order') }}">
+                <i class="fa fa-list" aria-hidden="true"></i> Order list
+              </a>
+              <a class="btn btn-secondary btn-block" href="{{ url('/admin/order/delivered') }}">
+                <i class="fa fa-list" aria-hidden="true"></i> Delivered
+              </a>
+              <a class="btn btn-secondary btn-block" href="{{ url('/admin/order/pending') }}">
+                <i class="fa fa-list" aria-hidden="true"></i> Not delivered
               </a>
             </div>
           </div>
@@ -57,6 +79,7 @@
         @yield('form')
         @yield('products')
         @yield('categories')
+        @yield('orders')
       </div>
     </div>
   </div>
