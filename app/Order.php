@@ -15,6 +15,6 @@ class Order extends Model
     }
 
     public function orderedProduct() {
-        return $this->belongsToMany(Product::class)->withPivot('qty', 'total');
+        return $this->belongsToMany(Product::class)->withPivot('qty', 'total')->withTimestamps();
     }
 }
