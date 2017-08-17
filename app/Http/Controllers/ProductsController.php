@@ -70,7 +70,7 @@ class ProductsController extends Controller
         }
 
         Product::create($formInput);
-        return redirect()->route('admin');
+        return redirect('admin/product');
     }
 
     /**

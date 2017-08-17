@@ -39,7 +39,7 @@
           <div id="collapser{{ $product->id }}" class="collapse" role="tabpanel" aria-labelledby="headingOne">
             <div class="card-block">
               <div class="media">
-                <img class="d-flex mr-3 rounded" src="/img/{{ $product->image }}" alt="{{ $product->name }} logo">
+                <img class="d-flex mr-3 rounded" src="/img/{{ $product->image }}" alt="{{ $product->name }} logo" width="300px">
                 <div class="media-body">
                   <h6>Price</h6>
                   <p>$ {{ $product->price }}</p>
