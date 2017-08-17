@@ -24,3 +24,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
   Route::resource('product', 'ProductsController');
   Route::resource('category', 'CategoriesController');  
 });
+
+Route::group(['middleware' => 'auth'], function () {
+  Route::resource('address', 'AddressController');
+});
+
+Route::group(['prefix' => 'purchase'], function() { 
+    Route::get('/', 'CheckoutController@preparePurchase');
+    Route::get('/shipping', 'CheckoutController@shipping')->name('checkout.shipping');
+    Route::get('/payment/{id}', 'CheckoutController@payment')->name('checkout.payment');
+    Route::post('/order/{id}', 'CheckoutController@order')->name('checkout.order');
+});
