@@ -42,9 +42,9 @@
             </div>
         </li>
         @endif
-        <li class="nav-item">
+        {{--  <li class="nav-item">
           <a class="nav-link" href="{{ route('store') }}">About</a>
-        </li>
+        </li>  --}}
         <li class="nav-item">
           <a class="nav-link" href="{{ url('/cart') }}">
             <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-success">{{ Cart::count() }}</span>

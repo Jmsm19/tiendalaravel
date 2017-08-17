@@ -56,11 +56,11 @@
                                     Login
                                 </button>
                             </div>
-                            <div class="col-xs-12">     
+                            {{--  <div class="col-xs-12">     
                                 <a class="forget-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
                                 </a>
-                            </div>
+                            </div>  --}}
                         </div>
                     </form>
                 </div>

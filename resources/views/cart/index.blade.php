@@ -7,7 +7,7 @@
         <table class="table">
           <thead class="thead-inverse">
             <tr>
-              <th><h5>Shopping Cart</h5></th>
+              <th width="180px"><h5>Shopping Cart</h5></th>
               <th></th>
               <th>Price</th>
               <th>Quantity</th>
