@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderShipped;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
 use App\Order;
 
 class OrderController extends Controller
@@ -19,6 +22,11 @@ class OrderController extends Controller
     }
 
     public function changeStatus(Request $request, $id) {
+        if ($request->status == 1) {
+            $order = Order::find($id);
+            $user = $order->user;
+            Mail::to($order->user->email)->send(new OrderShipped($user, $order));
+        }
         Order::find($id)->update(['delivered' => $request->status]);
         return back();
     }
