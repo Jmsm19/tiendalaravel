@@ -67,9 +67,10 @@ class ProductsController extends Controller
             $imageName = $filename.'_'.time().'.'.$extension;
             // Upload image to S3 AWS
             $image = $request->file('image');
-            $s3 = \Storage::disk('s3');
+            $s3 = Storage::disk('s3');
             $filePath = '/img/' . $imageName;
             $s3->put($filePath, file_get_contents($image), 'public');
+            // Save url in DB
             $formInput['image'] = 'https://s3.amazonaws.com/laraveltienda/img/'.$imageName;
         } else {
             $formInput['image'] = 'https://s3.amazonaws.com/laraveltienda/img/noimage.jpg';
@@ -136,10 +137,18 @@ class ProductsController extends Controller
             $extension = $request->image->getClientOriginalExtension();
             // Filename to Store
             $imageName = $filename.'_'.time().'.'.$extension;
-            // Move Image To Img Folder
-            $request->image->move('img', $imageName);
-
-            $formInput['image'] = $imageName;
+            // Delete previous image from S3 AWS
+            $s3 = Storage::disk('s3');
+            $previousImage = Product::find($id)->image;
+            $previousImageName = substr($previousImage, 43);
+            $previousImageFilePath = '/img/' . $previousImageName;
+            $s3->delete($previousImageFilePath);
+            // Upload new image
+            $image = $request->file('image');
+            $filePath = '/img/' . $imageName;
+            $s3->put($filePath, file_get_contents($image), 'public');
+            // Save url in DB
+            $formInput['image'] = 'https://s3.amazonaws.com/laraveltienda/img/'.$imageName;
         } else {
             $formInput['image'] = Product::find($id)->image;
         }
