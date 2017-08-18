@@ -142,7 +142,10 @@ class ProductsController extends Controller
             $previousImage = Product::find($id)->image;
             $previousImageName = substr($previousImage, 43);
             $previousImageFilePath = '/img/' . $previousImageName;
-            $s3->delete($previousImageFilePath);
+            // If previous image was "noimage.jpg", DO NOT delete it from S3 Bucket
+            if ($previousImageName  !== "noimage.jpg") {
+                $s3->delete($previousImageFilePath);
+            }
             // Upload new image
             $image = $request->file('image');
             $filePath = '/img/' . $imageName;
