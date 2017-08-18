@@ -7,20 +7,20 @@ Simple shopping site with basic CRUD.
 
 ## Packages used
 1. Laravel Collective
-  - composer require "laravelcollective/html":"^5.4.0"
-  - Documentation: https://laravelcollective.com/docs/master/html
+    - composer require "laravelcollective/html":"^5.4.0"
+    - Documentation: https://laravelcollective.com/docs/master/html
 
 2. LaravelShoppingcart
-  - composer require gloudemans/shoppingcart
-  - Documentation: https://github.com/Crinsane/LaravelShoppingcart
+    - composer require gloudemans/shoppingcart
+    - Documentation: https://github.com/Crinsane/LaravelShoppingcart
 
 3. S3 AWS Bucket
-  - composer require aws/aws-sdk-php
-  - composer require league/flysystem-aws-s3-v3
-  - References:
-    - https://chrisblackwell.me/upload-files-to-aws-s3-using-laravel/
-    - http://itsolutionstuff.com/post/laravel-5-amazon-s3-file-upload-tutorial-part-1example.html
-    - https://laravel.com/docs/5.4/filesystem
+    - composer require aws/aws-sdk-php
+    - composer require league/flysystem-aws-s3-v3
+    - References:
+      - https://chrisblackwell.me/upload-files-to-aws-s3-using-laravel/
+      - http://itsolutionstuff.com/post/laravel-5-amazon-s3-file-upload-tutorial-part-1example.html
+      - https://laravel.com/docs/5.4/filesystem
 
 ## Installation
 
