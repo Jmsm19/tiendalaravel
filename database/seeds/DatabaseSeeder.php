@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
             ['name' => 'The Witcher 3', 
             'description' => 'The Witcher 3: Wild Hunt es un videojuego de rol desarrollado por CD Projekt RED. CD Projekt RED es el desarrollador mientras que la distribución corre a cargo de la Warner Bros. Interactive, en el caso de Norteamérica y Bandai Namco para Europa.', 
             'price' => 39.99, 
-            'image' => 'https://s3.amazonaws.com/laraveltienda/img/TW3_Wild_Hunt.png', 
+            'image' => 'https://s3.amazonaws.com/laraveltienda/img/TW3_Wild_Hunt.jpg', 
             'category_id' => 1],
 
             ['name' => 'Ori and the Blind Forest', 
@@ -57,7 +57,7 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Mass Effect 2', 
             'description' => 'Mass Effect 2 es un videojuego de rol de acción desarrollado por BioWare Edmonton, con la asistencia de BioWare de Montreal, y publicado por Electronic Arts.', 
             'price' => 19.99, 
-            'image' => 'https://s3.amazonaws.com/laraveltienda/img/MassEffect2.png', 
+            'image' => 'https://s3.amazonaws.com/laraveltienda/img/MassEffect2.jpg', 
             'category_id' => 3],
 
             ['name' => 'Middle-Earth: Shadow of Mordor', 
@@ -87,7 +87,7 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Tales of Zestiria', 
             'description' => 'Tales of Zestiria es un videojuego de RPG japonés producido por Namco Bandai Games. El juego de vídeo fue lanzado con motivo de la celebración de los 20 años​ de la franquicia Tales of siendo este el decimoquinto juego de la serie principal, el juego está disponible para las consolas PlayStation 3, PlayStation 4 y además es la primera entrega a la plataforma de PC​ de la mano de Steam.', 
             'price' => 49.99, 
-            'image' => 'https://s3.amazonaws.com/laraveltienda/img/Tales_of_Zestiria.png', 
+            'image' => 'https://s3.amazonaws.com/laraveltienda/img/Tales_of_Zestiria.jpg', 
             'category_id' => 1],
 
             ['name' => 'Life Is Strange', 
