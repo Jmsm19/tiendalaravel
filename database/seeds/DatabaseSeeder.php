@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Ni no Kuni', 
             'description' => 'Ni no Kuni es un videojuego de rol desarrollado por la empresa japonesa Level-5 conjuntamente con el estudio de animación Ghibli, para Nintendo DS y PlayStation 3.', 
             'price' => 23.99, 
-            'image' => 'Ni_no_kuni.png', 
+            'image' => 'Ni_no_kuni.jpg', 
             'category_id' => 1],
             
             ['name' => 'Rise of Tomb Raider', 
