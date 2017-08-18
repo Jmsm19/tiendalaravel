@@ -17,7 +17,7 @@
           @forelse ($cart as $item)
             <tr>
               <td scope="row" class="cart-image-col">
-                <a href="{{ route('details', ['id' => $item->id]) }}"><img src="/img/{{ $item->options->image }}" alt="{{ $item->name }} logo" height="150px"></a>
+                <a href="{{ route('details', ['id' => $item->id]) }}"><img src="{{ $item->options->image }}" alt="{{ $item->name }} logo" height="150px"></a>
               </td>
               <td>
                 <h6>

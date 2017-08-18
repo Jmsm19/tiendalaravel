@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Contracts\Filesystem\Filesystem;
+use League\Flysystem\AwsS3v3\AwsS3Adapter;
+use Illuminate\Support\Facades\Storage;
 use App\Category;
 use App\Product;
 
@@ -53,6 +56,7 @@ class ProductsController extends Controller
 
         // Handle File Upload
         if ($request->hasFile('image')) {
+            
             // Get filename with the extension
             $filenameWithExt = $request->image->getClientOriginalName();
             // Get just filename
@@ -61,12 +65,14 @@ class ProductsController extends Controller
             $extension = $request->image->getClientOriginalExtension();
             // Filename to Store
             $imageName = $filename.'_'.time().'.'.$extension;
-            // Move Image To Img Folder
-            $request->image->move('img', $imageName);
-
-            $formInput['image'] = $imageName;
+            // Upload image to S3 AWS
+            $image = $request->file('image');
+            $s3 = \Storage::disk('s3');
+            $filePath = '/img/' . $imageName;
+            $s3->put($filePath, file_get_contents($image), 'public');
+            $formInput['image'] = 'https://s3.amazonaws.com/laraveltienda/img/'.$imageName;
         } else {
-            $formInput['image'] = 'noimage.jpg';
+            $formInput['image'] = 'https://s3.amazonaws.com/laraveltienda/img/noimage.jpg';
         }
 
         Product::create($formInput);

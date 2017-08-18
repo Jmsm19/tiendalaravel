@@ -3,7 +3,7 @@
 @section('content')
   <div class="row details-section">
     <div class="left col col-xs-12 col-md-4">
-      <img src="/img/{{ $product->image }}">
+      <img src="{{ $product->image }}">
     </div>
 
     <div class="right col col-xs-12 col-md-8">
